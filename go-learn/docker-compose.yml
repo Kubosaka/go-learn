@@ -1,0 +1,10 @@
+version: "3" # composeファイルのバージョン
+services:
+  app: # サービス名
+    container_name: go_learn
+    build: #Dockerfileの場所
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    tty: true # コンテナの永続化
+    volumes:
+      - ./app:/go/src/app # マウントディレクトリ
